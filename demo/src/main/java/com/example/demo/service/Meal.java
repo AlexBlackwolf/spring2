@@ -1,12 +1,22 @@
 package com.example.demo.service;
 
-public class Meal {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-    private String name;
+@Entity
+public class Meal {
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+
+private long id;
+private String name;
     private Double price;
     private String ingredients;
 
-    public Meal(String name, Double price, String ingredients) {
+    public Meal() {
         this.name = name;
         this.price = price;
         this.ingredients = ingredients;
@@ -36,3 +46,4 @@ public class Meal {
         this.ingredients = ingredients;
     }
 }
+
