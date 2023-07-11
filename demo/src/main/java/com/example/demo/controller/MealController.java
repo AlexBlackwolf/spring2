@@ -27,13 +27,13 @@ public class MealController {
 
     @PostMapping(value = "/post/meal")
     public ResponseEntity<String> postMeal(@RequestBody Meal meal) {
-        mealService.updateMeal(meal);
+        mealService.addMeal(meal);
         return ResponseEntity.ok("Added Meal");
     }
 
     @PutMapping("/put/replace-meal")
     public ResponseEntity<String> putMeal(@RequestBody Meal meal) {
-        mealService.addMeal(meal);
+        mealService.updateMeal(meal);
         return ResponseEntity.ok("updated Meal");
     }
 
