@@ -13,18 +13,13 @@ public class MealDAO {
         this.meals.add(meal);
         return meal;
     }
-
     public void updateMeal (Meal meal) {
         this.meals.removeIf(m->m.getName().equals(meal.getName()));
         this.meals.add(meal);
     }
-
-
     public void deleteMeal (String mealName) {
         this.meals.removeIf(m->m.getName().equals(mealName));
     }
-
-
     public  List<Meal> getMeals(){
         return this.meals;
     }
